@@ -83,19 +83,20 @@ def featured_image(browser):
 
 def mars_facts():
     # Add try/except for error handling
-    try:
-        # Use 'read_html' to scrape the facts table into a dataframe
-        df = pd.read_html('https://galaxyfacts-mars.com')[0]
+#    try:
+#        # Use 'read_html' to scrape the facts table into a dataframe
+#        df = pd.read_html('https://data-class-mars-facts.s3.amazonaws.com/Mars_Facts/index.html')[0]
+#    except BaseException:
+#        return None
 
-    except BaseException:
-        return None
-    
+    df = pd.read_html('https://data-class-mars-facts.s3.amazonaws.com/Mars_Facts/index.html')[0]
+   
     # Assign columns and set index of dataframe
     df.columns=['description', 'Mars', 'Earth']
     df.set_index('description', inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap
-    return df.to_html("table table-striped")
+    return df.to_html(classes='table table-striped')
 
 if __name__ == "__main__":
 
