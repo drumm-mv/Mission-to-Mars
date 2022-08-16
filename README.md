@@ -32,7 +32,6 @@ Use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemi
         <!-- Add a button to activate scraping script -->
         <p><a class="btn btn-danger btn-lg btn-block" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
-
       <!-- Add section for Mars News -->
       <div class="row" id="mars-news">
         <div class="col-md-12">
@@ -45,12 +44,10 @@ Use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemi
           </div>
         </div>
       </div>
-
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
           <h2>Featured Mars Image</h2>
-
           <!-- if images is False/None/non-existent, then default to error message -->
           <img
             src="{{mars.featured_image }}"
@@ -58,7 +55,6 @@ Use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemi
             alt="Responsive image"
           />
         </div>
-
         <div class="col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
@@ -67,13 +63,11 @@ Use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemi
           </div>
         </div>
       </div>
-
       <!-- Section for Mars Hemispheres -->
       <div class="row" id="mars-hemispheres">
         <div class="page-header">
           <h2 class="text-center">Mars Hemispheres</h2>
         </div>
-
         {% for hemisphere in mars.hemispheres %}
         <div class="col-xs-6 col-md-3">
           <div class="thumbnail">
